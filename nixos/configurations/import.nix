@@ -9,6 +9,5 @@
     ./grub/grub.nix
     ./users/users.nix
     ./plasma/plasma.nix
-    ./docker/docker.nix
   ];
 }

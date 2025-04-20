@@ -8,7 +8,7 @@
 
   environment = {
     sessionVariables = {
-      FLAKE = "/home/ryxes/.dotfiles";
+      FLAKE = "/home/ryxes/.basic-nix-kde";
     };  
     systemPackages = with pkgs; [
       home-manager # Generations manager
