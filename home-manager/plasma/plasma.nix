@@ -35,6 +35,93 @@
 	      };
       };
     };
+    
+
+    panels = [
+      {
+        height = 52;
+	      lengthMode = "fill";
+        location = "bottom";
+	      alignment = "center";
+	      hiding = "none";
+        opacity = "translucent";
+	      floating = true;
+	      widgets = [
+	      {
+	        kickoff = {
+	        icon = "distributor-logo-nixos";
+	        applicationNameFormat = "nameOnly";
+	      };
+	      }
+          "org.kde.plasma.icontasks"
+	      ]; 
+      }
+      {
+      	height = 52;
+	      lengthMode = "fill";
+	      location = "top";
+	      alignment = "center";
+	      hiding = "none";
+	      floating = true;	
+        widgets = [
+          "org.kde.plasma.windowlist"
+          "org.kde.plasma.panelspacer"
+	        {
+	        keyboardLayout.displayStyle = "flag";
+	        }
+	        {
+            digitalClock = {
+	            date.enable = false;
+	            time = {
+	              showSeconds = "always";
+	              format = "12h";
+	            };
+	            calendar = {
+	              firstDayOfWeek = "monday";
+	              plugins = ["holidays"];
+	              showWeekNumbers = true;
+	            };
+	            settings = {
+	              appearance = {
+	                fontSize = 11;
+	              };
+	            };
+            };	
+	        }
+	        {
+            systemTray.items = {
+	            shown = [
+		            "org.kde.plasma.networkmanagement"
+                "org.kde.plasma.volume"
+	            ];
+              hidden = [
+		            "org.kde.plasma.keyboardlayout"
+                "org.kde.plasma.battery"
+                "org.kde.plasma.bluetooth"
+		            "org.kde.plasma.battery"
+		            "org.kde.plasma.notifications"
+		            "org.kde.kdeconnect"
+		            "org.kde.plasma.mediacontroller"
+		            "org.kde.plasma.clipboard"
+              ];
+            };
+          }
+	        "org.kde.plasma.panelspacer"
+	        {
+	          pager = {
+	            general = {
+		            showWindowOutlines = false;
+		            showApplicationIconsOnWindowOutlines = false;
+		            showOnlyCurrentScreen = true;
+		            navigationWrapsAround = false;
+	            };	
+	          };
+	        }
+        ];
+      }
+    ];
+
+
 
     # Screen saver
     spectacle.shortcuts = {
