@@ -2,7 +2,6 @@
 
 # should be a created user with 'ryxes' username
 
-nix-shell -p git neovim home-manager
 cp /etc/nixos/hardware-configuration.nix ./nixos/
 sudo nixos-rebuild switch --flake .#ryxes
 home-manager switch --flake .#ryxes

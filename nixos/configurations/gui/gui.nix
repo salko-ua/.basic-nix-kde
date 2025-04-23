@@ -6,7 +6,7 @@
   };
 
   security.polkit.enable = true;
-  
+
   services.xserver = {
     enable = true;
     excludePackages = [pkgs.xterm];
@@ -20,12 +20,12 @@
     jack.enable = true;
   };
 
-   fonts = {
-     packages = with pkgs; [
-       meslo-lgs-nf
-       fantasque-sans-mono
-     ];
-   };
+  fonts = {
+    packages = with pkgs; [
+      meslo-lgs-nf
+      fantasque-sans-mono
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Kyiv";
@@ -45,14 +45,14 @@
     LC_TIME = "uk_UA.UTF-8";
   };
 
-   xdg.portal = {
-     enable = true;
-     extraPortals = with pkgs; [
-       xdg-desktop-portal-gtk
-       xdg-desktop-portal-gnome
-       xdg-desktop-portal-kde
-     ];
-   };
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-kde
+    ];
+  };
 
   networking.networkmanager.enable = true;
 }

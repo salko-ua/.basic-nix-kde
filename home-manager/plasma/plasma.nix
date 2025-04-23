@@ -1,5 +1,8 @@
-{ pkgs, lib, ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   programs.plasma = {
     enable = true;
     windows.allowWindowsToRememberPositions = false;
@@ -7,15 +10,15 @@
       clickItemTo = "select";
       cursor = {
         theme = "Bibata-Modern-Ice";
-	      size = 32;
+        size = 32;
       };
       iconTheme = "Papirus-Dark";
       splashScreen = {
-	      theme = "None";
+        theme = "None";
       };
       windowDecorations = {
-	      library = "org.kde.kwin.aurorae";
-	      theme="__aurorae__svg__Utterly-Round-Dark";
+        library = "org.kde.kwin.aurorae";
+        theme = "__aurorae__svg__Utterly-Round-Dark";
       };
       theme = "Utterly-Round";
       colorScheme = "BreezeDark";
@@ -28,100 +31,33 @@
           key = "Alt+T";
           command = "alacritty";
         };
-	      "rofi" = {
-	        name = "start rofi";
-	        key = "SUPER";
-	        command = "rofi -show drun";
-	      };
+        "rofi" = {
+          name = "start rofi";
+          key = "SUPER";
+          command = "rofi -show drun";
+        };
       };
     };
-    
 
     panels = [
       {
         height = 52;
-	      lengthMode = "fill";
+        lengthMode = "fill";
         location = "bottom";
-	      alignment = "center";
-	      hiding = "none";
+        alignment = "center";
+        hiding = "none";
         opacity = "translucent";
-	      floating = true;
-	      widgets = [
-	      {
-	        kickoff = {
-	        icon = "distributor-logo-nixos";
-	        applicationNameFormat = "nameOnly";
-	      };
-	      }
-          "org.kde.plasma.icontasks"
-	      ]; 
-      }
-      {
-      	height = 52;
-	      lengthMode = "fill";
-	      location = "top";
-	      alignment = "center";
-	      hiding = "none";
-	      floating = true;	
+        floating = true;
         widgets = [
-          "org.kde.plasma.windowlist"
-          "org.kde.plasma.panelspacer"
-	        {
-	        keyboardLayout.displayStyle = "flag";
-	        }
-	        {
-            digitalClock = {
-	            date.enable = false;
-	            time = {
-	              showSeconds = "always";
-	              format = "12h";
-	            };
-	            calendar = {
-	              firstDayOfWeek = "monday";
-	              plugins = ["holidays"];
-	              showWeekNumbers = true;
-	            };
-	            settings = {
-	              appearance = {
-	                fontSize = 11;
-	              };
-	            };
-            };	
-	        }
-	        {
-            systemTray.items = {
-	            shown = [
-		            "org.kde.plasma.networkmanagement"
-                "org.kde.plasma.volume"
-	            ];
-              hidden = [
-		            "org.kde.plasma.keyboardlayout"
-                "org.kde.plasma.battery"
-                "org.kde.plasma.bluetooth"
-		            "org.kde.plasma.battery"
-		            "org.kde.plasma.notifications"
-		            "org.kde.kdeconnect"
-		            "org.kde.plasma.mediacontroller"
-		            "org.kde.plasma.clipboard"
-              ];
+          {
+            kickoff = {
+              icon = "distributor-logo-nixos";
             };
           }
-	        "org.kde.plasma.panelspacer"
-	        {
-	          pager = {
-	            general = {
-		            showWindowOutlines = false;
-		            showApplicationIconsOnWindowOutlines = false;
-		            showOnlyCurrentScreen = true;
-		            navigationWrapsAround = false;
-	            };	
-	          };
-	        }
+          "org.kde.plasma.icontasks"
         ];
       }
     ];
-
-
 
     # Screen saver
     spectacle.shortcuts = {
@@ -135,29 +71,28 @@
       recordRegion = null;
       recordScreen = null;
       recordWindow = null;
-    }; 
+    };
     kwin = {
       titlebarButtons.right = ["minimize" "maximize" "close"];
       titlebarButtons.left = ["help" "keep-above-windows"];
       effects = {
-	    shakeCursor.enable = true;
-	    translucency.enable = true;
-	    minimization = {
-	      animation = "magiclamp";
-	      duration = 300;
-	    };
-	    wobblyWindows.enable = true;
-	    desktopSwitching.animation = "slide";
-	    windowOpenClose.animation = "fade";
-	    blur.enable = false;
-    };
-    virtualDesktops = {
+        shakeCursor.enable = true;
+        translucency.enable = true;
+        minimization = {
+          animation = "magiclamp";
+          duration = 300;
+        };
+        wobblyWindows.enable = true;
+        desktopSwitching.animation = "slide";
+        windowOpenClose.animation = "fade";
+        blur.enable = false;
+      };
+      virtualDesktops = {
         rows = 1;
         number = lib.mkForce 3;
       };
     };
 
-    
     shortcuts = {
       # Layout
       "KDE Keyboard Layout Switcher"."Switch keyboard layout to English (US)" = "Alt+Shift+E";
@@ -230,27 +165,26 @@
       "ksmserver"."Reboot" = "none";
       "ksmserver"."Shut Down" = "none";
 
-
-      # disable 
+      # disable
       "kaccess"."Toggle Screen Reader On and Off" = "none";
       "kwin"."Activate Window Demanding Attention" = "none";
-      "kwin"."Cycle Overview" = [ ];
-      "kwin"."Cycle Overview Opposite" = [ ];
+      "kwin"."Cycle Overview" = [];
+      "kwin"."Cycle Overview Opposite" = [];
       "kwin"."Decrease Opacity" = "none";
       "kwin"."Increase Opacity" = "none";
       "kwin"."Expose" = "none";
-      "kwin"."ExposeAll" = [ ];
+      "kwin"."ExposeAll" = [];
       "kwin"."ExposeClass" = "none";
-      "kwin"."ExposeClassCurrentDesktop" = [ ];
-      "kwin"."Move Tablet to Next Output" = [ ];
+      "kwin"."ExposeClassCurrentDesktop" = [];
+      "kwin"."Move Tablet to Next Output" = [];
       "kwin"."MoveMouseToFocus" = "none";
-      "kwin"."MoveZoomDown" = [ ];
-      "kwin"."MoveZoomLeft" = [ ];
-      "kwin"."MoveZoomRight" = [ ];
-      "kwin"."MoveZoomUp" = [ ];
+      "kwin"."MoveZoomDown" = [];
+      "kwin"."MoveZoomLeft" = [];
+      "kwin"."MoveZoomRight" = [];
+      "kwin"."MoveZoomUp" = [];
       "kwin"."Setup Window Shortcut" = "none";
       "kwin"."Suspend Compositing" = "none";
-      
+
       # .........
       "kwin"."Switch Window Down" = "none";
       "kwin"."Switch Window Left" = "none";
@@ -273,12 +207,12 @@
       "kwin"."Switch to Screen Below" = "none";
       "kwin"."Switch to Screen to the Left" = "none";
       "kwin"."Switch to Screen to the Right" = "none";
-      "kwin"."Toggle Night Color" = [ ];
+      "kwin"."Toggle Night Color" = [];
       "kwin"."Toggle Window Raise/Lower" = "none";
-     
+
       "kwin"."Walk Through Windows Alternative" = "none";
       "kwin"."Walk Through Windows Alternative (Reverse)" = "none";
-      "kwin"."Walk Through Windows of Current Application Alternative" = "none";    
+      "kwin"."Walk Through Windows of Current Application Alternative" = "none";
       "kwin"."Walk Through Windows of Current Application Alternative (Reverse)" = "none";
       "kwin"."Window Above Other Windows" = "none";
       "kwin"."Window Below Other Windows" = "none";
@@ -309,7 +243,7 @@
       #"kwin"."Window to Desktop 1" = "none";
       #"kwin"."Window to Desktop 2" = "none"; USED
       #"kwin"."Window to Desktop 3" = "none";
-      "kwin"."Window to Desktop 4" = "none"; 
+      "kwin"."Window to Desktop 4" = "none";
       "kwin"."Window to Desktop 5" = "none";
       "kwin"."Window to Desktop 6" = "none";
       "kwin"."Window to Desktop 7" = "none";
@@ -341,10 +275,9 @@
       "kwin"."Window to Screen 7" = "none";
       "kwin"."view_actual_size" = "none";
 
-
-      "org_kde_powerdevil"."Turn Off Screen" = [ ];
-      "org_kde_powerdevil"."powerProfile" = [ ];
-      "plasmashell"."activate application launcher" = [ ];
+      "org_kde_powerdevil"."Turn Off Screen" = [];
+      "org_kde_powerdevil"."powerProfile" = [];
+      "plasmashell"."activate application launcher" = [];
       "plasmashell"."activate task manager entry 1" = "none";
       "plasmashell"."activate task manager entry 2" = "none";
       "plasmashell"."activate task manager entry 3" = "none";
@@ -372,9 +305,6 @@
       "plasmashell"."toggle do not disturb" = "none";
     };
 
-
-
-
     #
     # Some low-level settings:
     #
@@ -389,6 +319,4 @@
       "kwinrc"."Effect-translucency"."TornOffMenus" = 100;
     };
   };
-
-
 }

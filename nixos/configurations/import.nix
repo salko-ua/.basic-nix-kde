@@ -5,7 +5,7 @@
     ./pkgs/pkgs.nix
     ./theme/theme.nix
     ./steam/steam.nix
-    #./nvidia/nvidia.nix
+    ./nvidia/nvidia.nix
     ./grub/grub.nix
     ./users/users.nix
     ./plasma/plasma.nix

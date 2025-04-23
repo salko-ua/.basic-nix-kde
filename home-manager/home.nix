@@ -24,8 +24,6 @@
     ./rofi/rofi.nix
   ];
 
-  
-
   nixpkgs = {
     config = {
       allowUnfree = true;
