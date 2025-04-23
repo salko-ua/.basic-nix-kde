@@ -55,7 +55,74 @@
             };
           }
           "org.kde.plasma.icontasks"
+          {
+            keyboardLayout.displayStyle = "flag";
+          }
+          {
+            systemTray.items = {
+              shown = [
+                "org.kde.plasma.networkmanagment"
+                "org.kde.plasma.volume"
+              ];
+              hidden = [
+                "org.kde.plasma.keyboardlayout"
+                "org.kde.plasma.notifications"
+                "org.kde.plasma.clipboard"
+              ];
+            };
+          }
         ];
+      }
+      {
+        height = 52;
+        lengthMode = "fit";
+        location = "top";
+        alignment = "left";
+        hiding = "dodgewindows";
+        opacity = "translucent";
+        floating = true;
+        widgets = [
+          {
+            pager = {
+              general.showWindowOutlines = false;
+              general.showApplicationIconsOnWindowOutlines = false;
+              general.showOnlyCurrentScreen = true;
+              general.navigationWrapsAround = false;
+            };
+          }
+        ];
+      }
+      {
+        height = 52;
+        lengthMode = "fit";
+        location = "top";
+        alignment = "center";
+        hiding = "dodgewindows";
+        opacity = "translucent";
+        floating = true;
+        widgets = [
+          {
+            digitalClock = {
+              date.enable = false;
+              time.showSeconds = "always";
+              time.format = "12h";
+              calendar.firstDayOfWeek = "monday";
+              calendar.plugins = ["holidays"];
+              calendar.showWeekNumbers = true;
+              settings.appearance.fontSize = 11;
+            };
+          }
+        ];
+      }
+      {
+        height = 52;
+        lengthMode = "fit";
+        location = "top";
+        alignment = "right";
+        hiding = "dodgewindows";
+        opacity = "translucent";
+        floating = true;
+        widgets = ["org.kde.plasma.windowlist"];
       }
     ];
 

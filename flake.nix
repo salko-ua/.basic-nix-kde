@@ -58,7 +58,7 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          catppuccin.homeManagerModules.catppuccin
+          catppuccin.homeModules.catppuccin
           inputs.plasma-manager.homeManagerModules.plasma-manager
           nix-index-database.hmModules.nix-index
           ./home-manager/home.nix
